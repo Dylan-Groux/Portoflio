@@ -1,0 +1,12 @@
+# VSCode settings
+.vscode/
+
+# Composer dependencies
+/vendor/
+
+# .env file
+.env
+
+# Log files
+*.log
+logs/
