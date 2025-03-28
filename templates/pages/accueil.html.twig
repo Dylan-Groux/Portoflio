@@ -1,6 +1,6 @@
 {% extends "base.html.twig" %}
 {% block title %}
-    <title>Website Portfolio</title>
+  Website Portfolio
 {% endblock %}
 
 {% block stylesheets %} 
@@ -13,12 +13,11 @@
         <a href="#contact" class="logo text-decoration-none"><span>Recrutez !</span></a>
         
         <nav class="navbar navbar-expand-lg navbar-light">
-            <div class="container-fluid">
                 <button class="navbar-toggler bg-mobile-nav" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="collapse navbar-collapse p-2" id="navbarSupportedContent">
                     <!-- Menu principal à gauche -->
                     <ul class="navbar-nav">
                         <li>
@@ -34,7 +33,6 @@
                             <a href="#contact" class="text-decoration-none" >Contact</a>
                         </li>
                     </ul>
-                </div>
             </div>
         </nav>
     </header>
@@ -46,9 +44,9 @@
             <p>Étudiant en informatique passionné, je crée des sites web et des solutions logicielles innovantes pour relever des défis techniques et affiner mes compétences ! </p>
 
             <div class="social-icons">
-                <a href="https://www.linkedin.com/in/dylan-groux-5a4a27312/" target="_blank"><i class='bx bxl-linkedin-square' ></i></a>
-                <a href="https://github.com/Dylan-Groux" target="_blank"><i class='bx bxl-github' ></i></a>
-                <a href="https://www.instagram.com/dydyyshaw" target="_blank"><i class='bx bxl-instagram' ></i></a>
+                <a href="https://www.linkedin.com/in/dylan-groux-5a4a27312/" target="_blank" style="text-decoration: none;"><i class='bx bxl-linkedin-square'></i></a>
+                <a href="https://github.com/Dylan-Groux" target="_blank" style="text-decoration: none;"><i class='bx bxl-github'></i></a>
+                <a href="https://www.instagram.com/dydyyshaw" target="_blank" style="text-decoration: none;"><i class='bx bxl-instagram' ></i></a>
             </div>
 
             <div class="btn-group">
@@ -56,7 +54,7 @@
             </div>
         </div>
             <div class="home-img">
-                <img src="{{ asset('images/funny_img.JPG') }}" alt="">
+                <img src="{{ asset('images/image.jpg') }}" alt="">
             </div>
     </section>
 
@@ -106,9 +104,9 @@
             <div class="service-box">
                 <div class="service-info">
                     <h4>Backend Developper</h4>
-                    <p>J'ai développé mes compétences en backend, en particulier avec Python.
-                        Flask et Django sont mes frameworks de prédilection, et je les utilise
-                        régulièrement dans mes projets personnels.</p>
+                    <p>J'ai développé mes compétences en backend, en particulier avec PHP.
+                        Symfony est mon framework de prédilection, et je l'utilise régulièrement
+                        pour créer des applications web robustes et évolutives.</p>
                 </div>
             </div>
 
@@ -118,7 +116,7 @@
                 <div class="service-info">
                     <h4>Frontend Developper</h4>
                     <p>J'ai acquis des compétences en frontend, notamment en créant un site vitrine de A à Z en utilisant la bibliothèque React.
-                        Je suis également à l'aise avec le développement frontend en PHP pour créer des interfaces interactives.</p>
+                        Je suis également à l'aise avec le développement frontend en PHP via Twig</p>
                 </div>
             </div>
 
@@ -127,7 +125,7 @@
             <div class="service-box">
                 <div class="service-info">
                     <h4>API Restful</h4>
-                    <p>Je maîtrise le développement d'APIs RESTful, en utilisant des technologies comme Flask et Django,
+                    <p>Je maîtrise le développement d'APIs RESTful, en utilisant des technologies comme Symfony et Laravel,
                          pour permettre une communication fluide entre les différentes couches d'une application web.</p>
                 </div>
             </div>
@@ -136,13 +134,63 @@
 
             <div class="service-box">
                 <div class="service-info">
-                    <h4>Python Developper</h4>
-                    <p>Python est mon langage préféré, avec lequel j'ai beaucoup exploré,
-                        Je me prépare également à passer la certification TOSA 3 dans un futur proche.</p>
+                    <h4>PHP Developper</h4>
+                    <p>Je maîtrise le développement en PHP, en utilisant des outils comme Symfony, Twig et Doctrine pour concevoir des applications web performantes et intégrer des APIs tierces.</p>
                 </div>
             </div>
         </div>
     </section>
+
+
+    <section class="project" id="project">
+
+        <h2 class="heading"> Projets </h2>
+
+       <div class="services-container-project">
+            <div class="service-box">
+                <a href="{{ path('mediatekformation') }}" style="text-decoration: none; color: inherit;">
+                    <div class="service-info">
+                        <h4>MediatekFormation</h4>
+                        <p>Ce projet, réalisé dans le cadre de ma formation au CNED, a été déployé et finalisé avec succès. 
+                            Il m'a permis de renforcer mes compétences en développement backend, notamment avec PHP et Symfony, 
+                            tout en mettant en pratique des concepts avancés pour créer des solutions robustes et performantes.</p>
+                    </div>
+                </a>
+            </div>
+
+
+            <div class="service-box">
+                <div class="service-info">
+                    <h4>En cours de développement</h4>
+                    <p>Les futurs projets seront implémentés d'ici peu, veuillez revenir plus tard.</p>
+                </div>
+            </div>
+
+            <div class="service-box">
+                <div class="service-info">
+                    <h4>En cours de développement</h4>
+                    <p>Les futurs projets seront implémentés d'ici peu, veuillez revenir plus tard.</p>
+                </div>
+            </div>
+
+            <div class="service-box">
+                <div class="service-info">
+                    <h4>En cours de développement</h4>
+                    <p>Les futurs projets seront implémentés d'ici peu, veuillez revenir plus tard.</p>
+                </div>
+            </div>
+
+            <div class="service-box">
+                <div class="service-info">
+                    <h4>En cours de développement</h4>
+                    <p>Les futurs projets seront implémentés d'ici peu, veuillez revenir plus tard.</p>
+                </div>
+            </div>
+            </div>
+
+        </div>
+    </section>
+
 
     <section class="contact" id="contact">
         <h2 class="heading">Discutons <span>Ensemble</span></h2>
@@ -163,20 +211,20 @@
     
 <footer class="footer">
     <div class="social">
-        <a href="https://www.linkedin.com/in/dylan-groux-5a4a27312/" target="_blank"><i class='bx bxl-linkedin-square' ></i></a>
-        <a href="https://github.com/Dylan-Groux" target="_blank"><i class='bx bxl-github' ></i></a>
-        <a href="https://www.instagram.com/dydyyshaw" target="_blank"><i class='bx bxl-instagram' ></i></a>
+                <a href="https://www.linkedin.com/in/dylan-groux-5a4a27312/" target="_blank" style="text-decoration: none;"><i class='bx bxl-linkedin-square'></i></a>
+                <a href="https://github.com/Dylan-Groux" target="_blank" style="text-decoration: none;"><i class='bx bxl-github'></i></a>
+                <a href="https://www.instagram.com/dydyyshaw" target="_blank" style="text-decoration: none;"><i class='bx bxl-instagram' ></i></a>
     </div>
 
     <ul class="list">
         <li>
-            <a href="#home">FAQ</a>
+            <a href="#home" style="text-decoration: none;">FAQ</a>
         </li>
         <li>
-            <a href="#competence">Compétences</a>
+            <a href="#competence" style="text-decoration: none;" >Compétences</a>
         </li>
         <li>
-            <a href="#contact">Conctez-moi</a>
+            <a href="#contact" style="text-decoration: none;">Conctez-moi</a>
         </li>
     </ul>
 </footer>
