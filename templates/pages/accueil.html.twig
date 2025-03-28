@@ -1,0 +1,188 @@
+{% extends "base.html.twig" %}
+{% block title %}
+    <title>Website Portfolio</title>
+{% endblock %}
+
+{% block stylesheets %} 
+    <link rel="stylesheet" href="{{ asset('styles/app.css') }}">
+{% endblock %}
+
+{% block body %}
+<body>
+    <header class="header" id="header">
+        <a href="#contact" class="logo text-decoration-none"><span>Recrutez !</span></a>
+        
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+                <button class="navbar-toggler bg-mobile-nav" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <!-- Menu principal à gauche -->
+                    <ul class="navbar-nav">
+                        <li>
+                            <a href="#home" class="text-decoration-none">Accueil</a>
+                        </li>
+                        <li>
+                            <a href="#education" class="text-decoration-none">Etudes</a>
+                        </li>
+                        <li>
+                            <a href="#competence" class="text-decoration-none">Compétences</a>
+                        </li>
+                        <li>
+                            <a href="#contact" class="text-decoration-none" >Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="home" id="home">
+        <div class="home-content">
+            <h1>Groux <span>Dylan</span></h1>
+            <h3 class="text-animation">Je suis <span></span></h3>
+            <p>Étudiant en informatique passionné, je crée des sites web et des solutions logicielles innovantes pour relever des défis techniques et affiner mes compétences ! </p>
+
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/dylan-groux-5a4a27312/" target="_blank"><i class='bx bxl-linkedin-square' ></i></a>
+                <a href="https://github.com/Dylan-Groux" target="_blank"><i class='bx bxl-github' ></i></a>
+                <a href="https://www.instagram.com/dydyyshaw" target="_blank"><i class='bx bxl-instagram' ></i></a>
+            </div>
+
+            <div class="btn-group">
+                <a href="#contact" class="btn">Disponible</a>
+            </div>
+        </div>
+            <div class="home-img">
+                <img src="{{ asset('images/funny_img.JPG') }}" alt="">
+            </div>
+    </section>
+
+    <section class="education" id="education">
+        <h2 class="heading">Etudes</h2>
+        <div class="timeline-items">
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                    <div class="timeline-date">
+                        2020
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Lycée Felix Faure</h3>
+                        <p>baccalauréat sciences et technologies du management et de la gestion</p>
+                    </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                    <div class="timeline-date">
+                        2022
+                    </div>
+                    <div class="timeline-content">
+                        <h3>IUT D'Amiens</h3>
+                        <p>DUT Gestion des entreprises et des administrations</p>
+                    </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                    <div class="timeline-date">
+                        2024
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Centre national d'enseignement à distance</h3>
+                        <p>BTS Services Informatiques aux Organisations option SLAM (développement)</p>
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="competence" id="competence">
+        <h2 class="heading">Compétences</h2>
+
+        <div class="services-container">
+            <div class="service-box">
+                <div class="service-info">
+                    <h4>Backend Developper</h4>
+                    <p>J'ai développé mes compétences en backend, en particulier avec Python.
+                        Flask et Django sont mes frameworks de prédilection, et je les utilise
+                        régulièrement dans mes projets personnels.</p>
+                </div>
+            </div>
+
+
+
+            <div class="service-box">
+                <div class="service-info">
+                    <h4>Frontend Developper</h4>
+                    <p>J'ai acquis des compétences en frontend, notamment en créant un site vitrine de A à Z en utilisant la bibliothèque React.
+                        Je suis également à l'aise avec le développement frontend en PHP pour créer des interfaces interactives.</p>
+                </div>
+            </div>
+
+
+
+            <div class="service-box">
+                <div class="service-info">
+                    <h4>API Restful</h4>
+                    <p>Je maîtrise le développement d'APIs RESTful, en utilisant des technologies comme Flask et Django,
+                         pour permettre une communication fluide entre les différentes couches d'une application web.</p>
+                </div>
+            </div>
+
+
+
+            <div class="service-box">
+                <div class="service-info">
+                    <h4>Python Developper</h4>
+                    <p>Python est mon langage préféré, avec lequel j'ai beaucoup exploré,
+                        Je me prépare également à passer la certification TOSA 3 dans un futur proche.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2 class="heading">Discutons <span>Ensemble</span></h2>
+        {% for message in app.flashes('info') %}
+            <div class="alert alert-warning">
+                {{ message }}
+            </div>
+        {% endfor %}
+
+        {% if form is defined %}
+            {{ form_start(form) }}
+                {{ form_widget(form) }}
+            {{ form_end(form) }}
+        {% else %}
+            <p>Le formulaire n'est pas disponible.</p>
+        {% endif %}
+    </section>
+    
+<footer class="footer">
+    <div class="social">
+        <a href="https://www.linkedin.com/in/dylan-groux-5a4a27312/" target="_blank"><i class='bx bxl-linkedin-square' ></i></a>
+        <a href="https://github.com/Dylan-Groux" target="_blank"><i class='bx bxl-github' ></i></a>
+        <a href="https://www.instagram.com/dydyyshaw" target="_blank"><i class='bx bxl-instagram' ></i></a>
+    </div>
+
+    <ul class="list">
+        <li>
+            <a href="#home">FAQ</a>
+        </li>
+        <li>
+            <a href="#competence">Compétences</a>
+        </li>
+        <li>
+            <a href="#contact">Conctez-moi</a>
+        </li>
+    </ul>
+</footer>
+</body>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('app.js') }}"></script>
+{% endblock %}
