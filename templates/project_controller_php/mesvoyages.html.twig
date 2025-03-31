@@ -1,0 +1,75 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Fiscalee{% endblock %}
+
+{% block stylesheets %} 
+    <link rel="stylesheet" href="{{ asset('styles/app.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+{% endblock %}
+
+{% block body %}
+<div class="container my-5">
+    <h1 class="text-center text-primary mb-4">Mes Voyages</h1>
+
+    <div class="mb-4">
+        <h3 class="text-secondary font">Mes Voyages - Une application éducative</h3>
+        <p>
+            Cette application répertorie les différents voyages que j'ai réalisés dans le cadre de ma formation BTS SIO avec le CNED. Elle est mise en avant dans mon portfolio en raison de son développement en PHP avec le framework Symfony, un langage et un outil qui me passionnent particulièrement.
+        </p>
+        <p>
+            L'application met en lumière mes compétences en développement web, en structuration de données et en gestion de projets. Elle illustre également ma capacité à utiliser Symfony pour créer des fonctionnalités dynamiques et interactives, tout en respectant les bonnes pratiques de développement.
+        </p>
+        <p>
+            Ce projet reflète mon engagement dans ma formation et ma volonté de maîtriser des technologies modernes pour répondre aux besoins des utilisateurs de manière efficace et professionnelle.
+        </p>
+    </div>
+
+    <div class="mb-4">
+        <h2 class="text-secondary">Langages et technologies utilisés</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <ul class="list-group">
+                    <li class="list-group-item">PHP</li>
+                    <li class="list-group-item">Symfony</li>
+                    <li class="list-group-item">Wamp</li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <ul class="list-group">
+                    <li class="list-group-item">MySQL</li>
+                    <li class="list-group-item">Doctrine</li>
+                    <li class="list-group-item">Twig</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-4">
+        <h2 class="text-secondary">Liens vers les documents</h2>
+        <div class="list-group">
+            <a href="https://github.com/Dylan-Groux/mesvoyages" target="_blank" class="list-group-item list-group-item-action">Dépôt distant</a>
+        </div>
+    </div>
+
+    <div class="mb-4">
+        <h2 class="text-secondary">Vidéo de démonstration</h2>
+        <div class="ratio ratio-16x9">
+            <iframe src="https://www.youtube//.com/embed/QSDUQEhlkX4" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <div class="mb-4">
+        <h2 class="text-secondary">Compétences couvertes</h2> <p>(dans le cadre de l'épreuve E5)<p>
+        <ul class="list-group">
+            <li class="list-group-item">Travailler en mode projet</li>
+            <li class="list-group-item">Mettre à disposition des utilisateurs un service informatique</li>
+            <li class="list-group-item">Répondre aux incidents et aux demandes d’assistance et d’évolution</li>
+            <li class="list-group-item">Développer la présence en ligne de l’organisation</li>
+        </ul>
+    </div>
+
+    <div class="text-center">
+        <a href="{{ path('accueil') }}" class="btn btn-primary">Retourner à l'accueil</a>
+    </div>
+</div>
+{% endblock %}

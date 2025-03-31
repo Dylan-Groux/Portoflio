@@ -23,4 +23,12 @@ final class ProjectControllerPhpController extends AbstractController
             'controller_name' => 'ProjectControllerPhpController',
         ]);
     }
+
+    #[Route('/project/mesvoyages', name: 'mesvoyages')]
+    public function mesVoyagesIndex(): Response
+    {
+        return $this->render('project_controller_php/mesvoyages.html.twig', [
+            'controller_name' => 'ProjectControllerPhpController',
+        ]);
+    }
 }

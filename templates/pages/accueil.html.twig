@@ -30,6 +30,9 @@
                             <a href="#competence" class="text-decoration-none">Compétences</a>
                         </li>
                         <li>
+                            <a href="#projets" class="text-decoration-none">Projets</a>
+                        </li>
+                        <li>
                             <a href="#contact" class="text-decoration-none" >Contact</a>
                         </li>
                     </ul>
@@ -142,7 +145,7 @@
     </section>
 
 
-    <section class="project" id="project">
+    <section class="projets" id="projets">
 
         <h2 class="heading"> Projets </h2>
 
@@ -165,7 +168,7 @@
                         <h4>PDF Generator</h4>
                         <p>Ce projet utilise la bibliothèque mikehaertl/php-pdftk pour interagir avec PDFTK et générer des PDF dynamiques. 
                            Il a été conçu pour automatiser la création de déclarations fiscales LMNP. 
-                           Grâce à cette solution, les utilisateurs peuvent remplir et personnaliser leurs formulaires fiscaux de manière rapide et efficace.</p>
+                        </p>
                     </div>
                 </a>
             </div>
@@ -186,8 +189,12 @@
 
             <div class="service-box">
                 <div class="service-info">
-                    <h4>En cours de développement</h4>
-                    <p>Les futurs projets seront implémentés d'ici peu, veuillez revenir plus tard.</p>
+                <a href="{{ path('mesvoyages') }}" style="text-decoration: none; color: inherit;">
+                    <h4>Mes Voyages</h4>
+                    <p>Ce projet, développé en Symfony avec PHP et Twig, répertorie des voyages. 
+                       Il a été créé dans le cadre de la formation du CNED pour implémenter des fonctionnalités 
+                       telles que le tri, le filtrage et la gestion administrative du site.</p>
+                    </a>
                 </div>
             </div>
             </div>
