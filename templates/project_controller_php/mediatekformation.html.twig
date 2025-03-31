@@ -1,0 +1,90 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}MediatekFormation{% endblock %}
+
+{% block stylesheets %} 
+    <link rel="stylesheet" href="{{ asset('styles/app.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+{% endblock %}
+
+{% block body %}
+<div class="container my-5">
+    <h1 class="text-center text-primary mb-4">MediatekFormation</h1>
+
+    <div class="mb-4">
+        <h2 class="text-secondary">Langages et technologies utilisés</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <ul class="list-group">
+                    <li class="list-group-item">HTML</li>
+                    <li class="list-group-item">CSS</li>
+                    <li class="list-group-item">Bootstrap</li>
+                    <li class="list-group-item">Cpanel</li>
+                    <li class="list-group-item">Tachê Cron</li>
+                    <li class="list-group-item">O2switch</li>
+                    <li class="list-group-item">OBS Studio</li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <ul class="list-group">
+                    <li class="list-group-item">PHP</li>
+                    <li class="list-group-item">Symfony</li>
+                    <li class="list-group-item">MySQL</li>
+                    <li class="list-group-item">Wamp</li>
+                    <li class="list-group-item">SSH</li>
+                    <li class="list-group-item">FTP</li>
+                    <li class="list-group-item">Twig</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-4">
+        <h2 class="text-secondary">Présentation rapide</h2>
+        <p class="lead">
+            Ce projet s'inscrit dans le cadre du développement d'une application web pour MediaTek86, un réseau de médiathèques dans la Vienne. 
+            L'objectif est de corriger et faire évoluer une application Symfony exploitant une base de données MySQL, 
+            permettant de mettre à disposition des vidéos d'auto-formation en ligne pour les utilisateurs des médiathèques.
+        </p>
+    </div>
+
+    <div class="mb-4">
+        <h2 class="text-secondary">Liens vers les documents</h2>
+        <div class="list-group">
+                <a href="https://eformation.cned.fr/mod/book/view.php?id=991115" target="_blank" class="list-group-item list-group-item-action">Contexte officiel</a>
+                <a href="https://eformation.cned.fr/pluginfile.php/1992084/mod_page/content/37/contratDeveloppement.pdf?time=1723015926826" target="_blank"class="list-group-item list-group-item-action">Contrat de développement</a>
+                <a href="https://eformation.cned.fr/pluginfile.php/1992084/mod_page/content/37/cahier_des_charges.pdf?time=1723016022470" target="_blank"class="list-group-item list-group-item-action">Cahier des charges</a>
+                <a href="https://eformation.cned.fr/pluginfile.php/1992084/mod_page/content/37/AP1_missions.pdf?time=1723016052336" target="_blank"class="list-group-item list-group-item-action">Missions</a>
+                <a href="/path/to/compte_rendu.pdf" target="_blank" class="list-group-item list-group-item-action">Compte rendu</a>
+                <a href="/path/to/pv_recette.pdf" target="_blank" class="list-group-item list-group-item-action">PV de recette</a>
+                <a href="https://github.com/Dylan-Groux/mediatekformation" target="_blank" class="list-group-item list-group-item-action">Dépôt distant</a>
+                <a href="https://mediatekformation.grdy2507.odns.fr/" target="_blank" class="list-group-item list-group-item-action">Site en ligne avec ENV en DEV</a>
+                <a href="https://github.com/Dylan-Groux/mediatekformation/blob/master/ROUTES.md" target="_blank" class="list-group-item list-group-item-action">Documentation Route</a>
+                <a href="https://github.com/Dylan-Groux/mediatekformation/blob/master/README.md" target="_blank" class="list-group-item list-group-item-action">Documentation technique</a>
+                <a href="https://github.com/Dylan-Groux/mediatekformation/blob/master/DOC_UTILISATEUR.md" target="_blank" class="list-group-item list-group-item-action">Documentation Utilisateur</a>
+        </div>
+    </div>
+
+    <div class="mb-4">
+        <h2 class="text-secondary">Vidéo de démonstration</h2>
+        <div class="ratio ratio-16x9">
+            <iframe src="https://www.youtube.com/embed/QSDUQEhlkX4" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <div class="mb-4">
+        <h2 class="text-secondary">Compétences couvertes</h2> <p>(dans le cadre de l'épreuve E5)<p>
+        <ul class="list-group">
+            <li class="list-group-item">Travailler en mode projet</li>
+            <li class="list-group-item">Mettre à disposition des utilisateurs un service informatique</li>
+            <li class="list-group-item">Répondre aux incidents et aux demandes d’assistance et d’évolution</li>
+            <li class="list-group-item">Gérer le patrimoine informatique</li>
+            <li class="list-group-item">Développer la présence en ligne de l’organisation</li>
+        </ul>
+    </div>
+
+    <div class="text-center">
+        <a href="{{ path('accueil') }}" class="btn btn-primary">Retourner à l'accueil</a>
+    </div>
+</div>
+{% endblock %}
