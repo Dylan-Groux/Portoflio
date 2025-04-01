@@ -1,0 +1,80 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Portfolio{% endblock %}
+
+{% block stylesheets %} 
+    <link rel="stylesheet" href="{{ asset('styles/app.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+{% endblock %}
+
+{% block body %}
+<div class="container my-5">
+    <h1 class="text-center text-primary mb-4">Mon Portfolio</h1>
+
+    <div class="mb-4">
+        <h2 class="text-secondary">Langages et technologies utilisés</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <ul class="list-group">
+                    <li class="list-group-item">HTML</li>
+                    <li class="list-group-item">CSS</li>
+                    <li class="list-group-item">Bootstrap</li>
+                    <li class="list-group-item">Cpanel</li>
+                    <li class="list-group-item">Tachê Cron</li>
+                    <li class="list-group-item">O2switch</li>
+                    <li class="list-group-item">Javascript</li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <ul class="list-group">
+                    <li class="list-group-item">PHP</li>
+                    <li class="list-group-item">Symfony</li>
+                    <li class="list-group-item">Wamp</li>
+                    <li class="list-group-item">SSH</li>
+                    <li class="list-group-item">FTP</li>
+                    <li class="list-group-item">Twig</li>
+                    <li class="list-group-item">SSL/TLS<li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-4">
+        <h2 class="text-secondary">Présentation rapide</h2>
+        <p class="lead">
+            Ce projet est une initiative personnelle visant à démontrer mes compétences en développement web. 
+            Il illustre ma capacité à concevoir et déployer des solutions modernes et fonctionnelles, tout en mettant en avant 
+            une approche centrée sur l'utilisateur. Ce portfolio dynamique est conçu pour capter l'attention des recruteurs en 
+            présentant mes réalisations de manière claire et interactive. Il reflète également mon engagement à rester à jour 
+            avec les dernières technologies et à fournir des solutions adaptées aux besoins actuels du marché.
+        </p>
+    </div>
+
+    <div class="mb-4">
+        <h2 class="text-secondary">Liens vers les documents</h2>
+        <div class="list-group">
+                <a href="https://github.com/Dylan-Groux/Portfolio" target="_blank" class="list-group-item list-group-item-action">Dépôt distant</a>
+        </div>
+    </div>
+
+    <div class="mb-4">
+        <h2 class="text-secondary">Vidéo de démonstration</h2>
+        <div class="ratio ratio-16x9">
+            <iframe src="" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <div class="mb-4">
+        <h2 class="text-secondary">Compétences couvertes</h2> <p>(dans le cadre de l'épreuve E5)<p>
+        <ul class="list-group">
+            <li class="list-group-item">Gérer le patrimoine informatique</li>
+            <li class="list-group-item">Développer la présence en ligne de l’organisation</li>
+            <li class="list-group-item">Organiser son développement professionnel</li>
+        </ul>
+    </div>
+
+    <div class="text-center">
+        <a href="{{ path('accueil') }}" class="nav-link bg-primary text-white p-2 rounded">Retourner à l'accueil</a>
+    </div>
+</div>
+{% endblock %}

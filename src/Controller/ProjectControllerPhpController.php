@@ -31,4 +31,20 @@ final class ProjectControllerPhpController extends AbstractController
             'controller_name' => 'ProjectControllerPhpController',
         ]);
     }
+
+    #[Route('/project/portfolio', name: 'portfolio')]
+    public function monPortfolioIndex(): Response
+    {
+        return $this->render('project_controller_php/portfolio.html.twig', [
+            'controller_name' => 'ProjectControllerPhpController',
+        ]);
+    }
+
+    #[Route('/project/smallcontact', name: 'smallcontact')]
+    public function smallContactIndex(): Response
+    {
+        return $this->render('project_controller_php/smallcontact.html.twig', [
+            'controller_name' => 'ProjectControllerPhpController',
+        ]);
+    }
 }
