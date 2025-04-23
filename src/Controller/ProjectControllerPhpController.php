@@ -47,4 +47,20 @@ final class ProjectControllerPhpController extends AbstractController
             'controller_name' => 'ProjectControllerPhpController',
         ]);
     }
+
+    #[Route('/project/jol', name: 'jol')]
+    public function jolIndex(): Response
+    {
+        return $this->render('project_controller_php/jol.html.twig', [
+            'controller_name' => 'ProjectControllerPhpController',
+        ]);
+    }
+
+    #[Route('/project/mediatek86', name: 'mediatek86')]
+    public function mediatek86Index(): Response
+    {
+        return $this->render('project_controller_php/mediatek86.html.twig', [
+            'controller_name' => 'ProjectControllerPhpController',
+        ]);
+    }
 }
