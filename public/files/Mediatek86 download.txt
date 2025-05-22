@@ -1,0 +1,41 @@
+🛠️ Installation de l'application Mediatek86
+1. Prérequis
+Pour faire fonctionner cette application, tu auras besoin des éléments suivants :
+
+Système d'exploitation : Windows
+
+.NET Framework : Version 4.8 ou supérieure
+
+Visual Studio : Version 2019 ou supérieure (pour la compilation et l'exécution en mode développement)
+kernel.googlesource.com
+
+2. Cloner le dépôt
+Ouvre un terminal ou une invite de commandes et exécute la commande suivante :
+
+bash
+Copier
+Modifier
+git clone https://github.com/Dylan-Groux/Mediatek86.git
+Place ensuite le dossier cloné dans un répertoire de ton choix.
+
+3. Ouvrir le projet dans Visual Studio
+Lance Visual Studio et ouvre le fichier MediatekDocuments.sln situé dans le dossier cloné.
+
+4. Restaurer les dépendances
+Avant de compiler le projet, assure-toi que toutes les dépendances NuGet sont restaurées.
+
+Dans Visual Studio, clique sur Outils > Gestionnaire de package NuGet > Restaurer les packages NuGet.
+
+5. Compiler et exécuter l'application
+Une fois les dépendances restaurées, tu peux compiler et exécuter l'application en mode développement en appuyant sur F5 ou en cliquant sur Démarrer dans Visual Studio.
+
+Cela lancera l'application en mode débogage.
+
+📦 Version exécutable
+Si tu préfères utiliser une version déjà compilée de l'application, tu peux télécharger le fichier d'installation Setup.msi depuis le lien fourni dans le dépôt.
+
+Une fois téléchargé, double-clique sur le fichier Setup.msi pour lancer l'installation.
+
+Après l'installation, l'application sera disponible dans le menu Démarrer de Windows.
+
+https://dotnet.microsoft.com/fr-fr/download/dotnet-framework/net48?utm_source=chatgpt.com 

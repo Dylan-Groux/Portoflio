@@ -1,0 +1,62 @@
+🚀 Installation de l'application MediatekFormation
+
+1. Prérequis
+
+Assure-toi d'avoir les outils suivants installés sur ta machine :
+
+PHP (version 8.1 ou supérieure)
+
+Composer (outil de gestion des dépendances PHP)
+
+Git (pour cloner le dépôt)
+
+Serveur web local comme WampServer ou XAMPP
+
+MySQL (inclus avec WampServer ou XAMPP)
+
+GitHub
+
+2. Cloner le dépôt
+Ouvre un terminal ou une invite de commandes et exécute la commande suivante :
+
+bash
+Copier
+Modifier
+git clone https://github.com/Dylan-Groux/mediatekformation.git
+Place ensuite le dossier cloné dans le répertoire www ou htdocs de ton serveur local (par exemple, C:\wamp64\www\mediatekformation).
+
+3. Installer les dépendances
+Dans le terminal, navigue jusqu'au dossier du projet :
+
+
+cd chemin/vers/mediatekformation
+Puis, installe les dépendances avec Composer :
+
+
+composer install
+4. Configurer la base de données
+Crée une base de données MySQL nommée mediatekformation via phpMyAdmin ou en ligne de commande.
+
+Importe ensuite le fichier SQL fourni dans le dépôt pour initialiser la base de données :
+
+php bin/console doctrine:database:create
+php bin/console doctrine:migrations:migrate
+
+5. Configurer les variables d'environnement
+Renomme le fichier .env.example en .env et ajuste les paramètres de connexion à la base de données si nécessaire.
+GitHub
+
+6. Lancer l'application
+Démarre ton serveur local (WampServer ou XAMPP) et accède à l'application via l'URL suivante :
+
+http://localhost/mediatekformation/public/index.php
+🧪 Tester l'application
+L'application devrait maintenant être accessible en local. Tu pourras naviguer entre les différentes pages :
+
+Page d'accueil : présentation du site et des dernières vidéos
+
+Formations : liste des formations disponibles avec filtres et tris
+
+Playlists : affichage des playlists de formations
+
+Détail d'une formation : informations détaillées sur une formation spécifique
