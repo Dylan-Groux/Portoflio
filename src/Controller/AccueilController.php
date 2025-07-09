@@ -25,12 +25,9 @@ class AccueilController extends AbstractController{
     }
     
     #[Route('/', name: 'accueil')]
-    public function index(Request $request, MailerInterface $mailer): Response{
+    public function index(Request $request, MailerInterface $mailer): Response
+    {
 
-        $form = $this->createForm(ContactType::class);
-    
-        $form->handleRequest($request);
-    
         $form = $this->createForm(ContactType::class);
         $form->handleRequest($request);
 
@@ -39,7 +36,8 @@ class AccueilController extends AbstractController{
 
             // Construction du mail
             $email = (new Email())
-                ->from($data['email']) // l'expéditeur : le champ du formulaire
+                ->from('admin@portfolio.grdy2507.odns.fr')
+                ->replyTo($data['email']) // l'expéditeur : le champ du formulaire
                 ->to('admin@portfolio.grdy2507.odns.fr') // le destinataire final
                 ->subject($data['subject'])
                 ->text(
@@ -58,9 +56,6 @@ class AccueilController extends AbstractController{
             // Redirection pour éviter le re-post en cas de rafraîchissement
             $url = $this->generateUrl('accueil') . '#contact';
             return new RedirectResponse($url);
-        } else {
-            // Si le formulaire n'est pas soumis ou n'est pas valide, on affiche le formulaire
-            $this->addFlash('info', 'Veuillez remplir le formulaire.');
         }
 
         return $this->render("pages/accueil.html.twig", [
