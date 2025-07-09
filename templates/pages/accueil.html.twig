@@ -238,19 +238,7 @@
 
     <section class="contact" id="contact">
         <h2 class="heading">Discutons <span>Ensemble</span></h2>
-        {% for message in app.flashes('info') %}
-            <div class="alert alert-warning">
-                {{ message }}
-            </div>
-        {% endfor %}
-
-        {% if form is defined %}
-            {{ form_start(form) }}
-                {{ form_widget(form) }}
-            {{ form_end(form) }}
-        {% else %}
-            <p>Le formulaire n'est pas disponible.</p>
-        {% endif %}
+        {% include '_formulaire/_contact.html.twig'%}
     </section>
     
 <footer class="footer">
