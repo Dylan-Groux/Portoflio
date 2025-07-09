@@ -58,6 +58,9 @@ class AccueilController extends AbstractController{
             // Redirection pour éviter le re-post en cas de rafraîchissement
             $url = $this->generateUrl('accueil') . '#contact';
             return new RedirectResponse($url);
+        } else {
+            // Si le formulaire n'est pas soumis ou n'est pas valide, on affiche le formulaire
+            $this->addFlash('info', 'Veuillez remplir le formulaire.');
         }
 
         return $this->render("pages/accueil.html.twig", [
