@@ -3,6 +3,7 @@ namespace App\Controller;
 
 use App\Form\ContactType;
 use App\Repository\FormationRepository;
+use Psr\Log\LoggerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Response;
@@ -25,20 +26,32 @@ class AccueilController extends AbstractController{
     }
     
     #[Route('/', name: 'accueil')]
-    public function index(Request $request, MailerInterface $mailer): Response
+    public function index(Request $request, MailerInterface $mailer, LoggerInterface $logger): Response
     {
 
         $form = $this->createForm(ContactType::class);
         $form->handleRequest($request);
 
+        if ($form->isSubmitted()) {
+        dump('Formulaire soumis');
+        if ($form->isValid()) {
+            dump('Formulaire valide');
+            // envoi mail...
+        } else {
+            dump('Formulaire invalide');
+            dump($form->getErrors(true));
+        }
+        } else {
+            dump('Formulaire non soumis');
+        }
+
         if ($form->isSubmitted() && $form->isValid()) {
             $data = $form->getData();
 
-            // Construction du mail
             $email = (new Email())
                 ->from('admin@portfolio.grdy2507.odns.fr')
-                ->replyTo($data['email']) // l'expéditeur : le champ du formulaire
-                ->to('admin@portfolio.grdy2507.odns.fr') // le destinataire final
+                ->replyTo($data['email'])
+                ->to('admin@portfolio.grdy2507.odns.fr')
                 ->subject($data['subject'])
                 ->text(
                     "Nom : " . $data['name'] . "\n" .
@@ -47,13 +60,15 @@ class AccueilController extends AbstractController{
                     "Message : \n" . $data['message']
                 );
 
-            // Envoi du mail
-            $mailer->send($email);
+            try {
+                $mailer->send($email);
+                $this->addFlash('info', 'Votre message a bien été envoyé. Merci !');
+            } catch (\Exception $e) {
+                $this->addFlash('error', 'Erreur lors de l’envoi du mail : ' . $e->getMessage());
+                // Log l'erreur (utile en prod)
+                $logger->error('Mailer error: ' . $e->getMessage());
+            }
 
-            // Ajout d’un message flash de confirmation
-            $this->addFlash('info', 'Votre message a bien été envoyé. Merci !');
-
-            // Redirection pour éviter le re-post en cas de rafraîchissement
             $url = $this->generateUrl('accueil') . '#contact';
             return new RedirectResponse($url);
         }
