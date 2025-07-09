@@ -84,4 +84,41 @@ class AccueilController extends AbstractController{
     public function cgu(): Response{
         return $this->render("pages/cgu.html.twig");
     }
+
+    #[Route('/test-mail', name: 'test_mail')]
+public function testMail(MailerInterface $mailer, LoggerInterface $logger): Response
+{
+    // Données "en dur" simulant ce que le formulaire devrait envoyer
+    $data = [
+        'name' => 'Test User',
+        'email' => 'test@example.com',
+        'phone' => '0123456789',
+        'subject' => 'Test sujet',
+        'message' => 'Ceci est un message de test.'
+    ];
+
+    // Construction du mail (même code que pour le formulaire)
+    $email = (new Email())
+        ->from('admin@portfolio.grdy2507.odns.fr')
+        ->replyTo($data['email'])
+        ->to('admin@portfolio.grdy2507.odns.fr')
+        ->subject($data['subject'])
+        ->text(
+            "Nom : " . $data['name'] . "\n" .
+            "Email : " . $data['email'] . "\n" .
+            "Téléphone : " . $data['phone'] . "\n\n" .
+            "Message : \n" . $data['message']
+        );
+
+        try {
+            $mailer->send($email);
+            $this->addFlash('info', 'Mail de test envoyé avec succès !');
+        } catch (\Exception $e) {
+            $logger->error('Erreur lors de l’envoi du mail de test : ' . $e->getMessage());
+            $this->addFlash('error', 'Erreur lors de l’envoi du mail de test : ' . $e->getMessage());
+        }
+
+        return $this->redirectToRoute('accueil');
+    }
+
 }
