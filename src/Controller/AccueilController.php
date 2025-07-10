@@ -32,19 +32,6 @@ class AccueilController extends AbstractController{
         $form = $this->createForm(ContactType::class);
         $form->handleRequest($request);
 
-        if ($form->isSubmitted()) {
-        dump('Formulaire soumis');
-        if ($form->isValid()) {
-            dump('Formulaire valide');
-            // envoi mail...
-        } else {
-            dump('Formulaire invalide');
-            dump($form->getErrors(true));
-        }
-        } else {
-            dump('Formulaire non soumis');
-        }
-
         if ($form->isSubmitted() && $form->isValid()) {
             $data = $form->getData();
 
