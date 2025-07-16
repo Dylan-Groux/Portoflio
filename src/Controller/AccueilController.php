@@ -49,9 +49,9 @@ class AccueilController extends AbstractController{
 
             try {
                 $mailer->send($email);
-                $this->addFlash('info', 'Votre message a bien   t   envoy  . Merci !');
+                $this->addFlash('info', 'Votre message a bien été envoyé, merci !');
             } catch (\Exception $e) {
-                $this->addFlash('error', 'Erreur lors de l ^`^yenvoi du mail : ' . $e->getMessage());
+                $this->addFlash('error', 'Erreur lors de l envoi du mail : ' . $e->getMessage());
                 // Log l'erreur (utile en prod)
                 $logger->error('Mailer error: ' . $e->getMessage());
             }
